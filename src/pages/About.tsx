@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import aboutPhoto from "@/assets/photo.png";
 
 export default function About() {
   return (
@@ -8,16 +9,11 @@ export default function About() {
         <div className="max-w-3xl">
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row items-start gap-8 mb-8">
-              <div className="w-32 h-32 rounded-2xl bg-muted border-2 border-primary/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-36 h-44 rounded-2xl overflow-hidden flex-shrink-0">
                 <img
-                  src="/photo.jpg"
+                  src={aboutPhoto}
                   alt="Гилян Байдаев"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const el = e.currentTarget;
-                    el.style.display = 'none';
-                    el.parentElement!.innerHTML = '<span class="text-muted-foreground text-xs text-center px-2">Фото</span>';
-                  }}
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div>

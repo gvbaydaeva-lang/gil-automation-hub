@@ -4,6 +4,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
 import { getServices } from "@/data/services";
+import heroPhoto from "@/assets/photo.png";
 
 export default function Index() {
   const services = getServices();
@@ -12,14 +13,14 @@ export default function Index() {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="container py-20 md:py-32">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="max-w-2xl flex-1">
+        <div className="container py-16 md:py-24">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            <div className="max-w-xl flex-1 order-2 md:order-1">
               <AnimatedSection>
                 <p className="text-sm font-medium text-primary mb-4 tracking-wider uppercase">Вайб-кодинг · ИИ · Автоматизация</p>
               </AnimatedSection>
               <AnimatedSection delay={0.1}>
-                <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
                   Создаю цифровые <br />
                   <span className="text-primary">продукты</span> с помощью ИИ
                 </h1>
@@ -47,18 +48,16 @@ export default function Index() {
                 </div>
               </AnimatedSection>
             </div>
-            <AnimatedSection delay={0.3}>
-              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-muted border-4 border-primary/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
-                <img
-                  src="/photo.jpg"
-                  alt="Гилян Байдаев"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const el = e.currentTarget;
-                    el.style.display = 'none';
-                    el.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm text-center px-4">Добавьте фото<br/>public/photo.jpg</span>';
-                  }}
-                />
+            <AnimatedSection delay={0.2}>
+              <div className="order-1 md:order-2 flex-shrink-0">
+                <div className="relative w-64 md:w-80 lg:w-96">
+                  <img
+                    src={heroPhoto}
+                    alt="Гилян Байдаев"
+                    className="w-full h-auto rounded-3xl shadow-2xl shadow-primary/10"
+                  />
+                  <div className="absolute -inset-4 rounded-[2rem] border border-primary/10 -z-10" />
+                </div>
               </div>
             </AnimatedSection>
           </div>
