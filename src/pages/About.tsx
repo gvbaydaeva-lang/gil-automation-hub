@@ -7,11 +7,27 @@ export default function About() {
       <section className="container py-16">
         <div className="max-w-3xl">
           <AnimatedSection>
-            <p className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">Обо мне</p>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">Гилян Байдаев</h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Специалист по вайб-кодингу и ИИ-автоматизации. Помогаю бизнесу создавать цифровые продукты нового поколения.
-            </p>
+            <div className="flex flex-col sm:flex-row items-start gap-8 mb-8">
+              <div className="w-32 h-32 rounded-2xl bg-muted border-2 border-primary/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <img
+                  src="/photo.jpg"
+                  alt="Гилян Байдаев"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const el = e.currentTarget;
+                    el.style.display = 'none';
+                    el.parentElement!.innerHTML = '<span class="text-muted-foreground text-xs text-center px-2">Фото</span>';
+                  }}
+                />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-primary mb-2 uppercase tracking-wider">Обо мне</p>
+                <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Гилян Байдаев</h1>
+                <p className="text-xl text-muted-foreground">
+                  Специалист по вайб-кодингу и ИИ-автоматизации. Помогаю бизнесу создавать цифровые продукты нового поколения.
+                </p>
+              </div>
+            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>

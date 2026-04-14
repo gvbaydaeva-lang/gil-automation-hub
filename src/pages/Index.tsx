@@ -13,41 +13,56 @@ export default function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="container py-20 md:py-32">
-          <div className="max-w-2xl">
-            <AnimatedSection>
-              <p className="text-sm font-medium text-primary mb-4 tracking-wider uppercase">Вайб-кодинг · ИИ · Автоматизация</p>
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
-              <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-                Создаю цифровые <br />
-                <span className="text-primary">продукты</span> с помощью ИИ
-              </h1>
-            </AnimatedSection>
-            <AnimatedSection delay={0.2}>
-              <p className="text-lg text-muted-foreground mt-6 max-w-lg">
-                Сайты, приложения, чат-боты, автоматизация — быстрее и дешевле классической разработки. 
-                Подрядчик «Мой бизнес»: до 80% компенсирует государство.
-              </p>
-            </AnimatedSection>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="max-w-2xl flex-1">
+              <AnimatedSection>
+                <p className="text-sm font-medium text-primary mb-4 tracking-wider uppercase">Вайб-кодинг · ИИ · Автоматизация</p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <h1 className="font-heading text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+                  Создаю цифровые <br />
+                  <span className="text-primary">продукты</span> с помощью ИИ
+                </h1>
+              </AnimatedSection>
+              <AnimatedSection delay={0.2}>
+                <p className="text-lg text-muted-foreground mt-6 max-w-lg">
+                  Сайты, приложения, чат-боты, автоматизация — быстрее и дешевле классической разработки. 
+                  Подрядчик «Мой бизнес»: до 80% компенсирует государство.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <Link
+                    to="/services"
+                    className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+                  >
+                    Смотреть услуги
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="border border-foreground/20 px-8 py-3 rounded-full font-medium hover:bg-foreground/5 transition-colors"
+                  >
+                    Обо мне
+                  </Link>
+                </div>
+              </AnimatedSection>
+            </div>
             <AnimatedSection delay={0.3}>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <Link
-                  to="/services"
-                  className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
-                >
-                  Смотреть услуги
-                </Link>
-                <Link
-                  to="/about"
-                  className="border border-foreground/20 px-8 py-3 rounded-full font-medium hover:bg-foreground/5 transition-colors"
-                >
-                  Обо мне
-                </Link>
+              <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-muted border-4 border-primary/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <img
+                  src="/photo.jpg"
+                  alt="Гилян Байдаев"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const el = e.currentTarget;
+                    el.style.display = 'none';
+                    el.parentElement!.innerHTML = '<span class="text-muted-foreground text-sm text-center px-4">Добавьте фото<br/>public/photo.jpg</span>';
+                  }}
+                />
               </div>
             </AnimatedSection>
           </div>
         </div>
-        {/* Decorative blob */}
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
       </section>
 
