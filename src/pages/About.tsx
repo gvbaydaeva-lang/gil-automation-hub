@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import AnimatedSection from "@/components/AnimatedSection";
+import aboutPhoto from "@/assets/photo.png";
 
 export default function About() {
   return (
