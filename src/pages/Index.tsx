@@ -27,8 +27,7 @@ export default function Index() {
               </AnimatedSection>
               <AnimatedSection delay={0.2}>
                 <p className="text-lg text-muted-foreground mt-6 max-w-lg">
-                  Сайты, приложения, чат-боты, автоматизация — быстрее и дешевле классической разработки. 
-                  Подрядчик «Мой бизнес»: до 80% компенсирует государство.
+                  Сайты, приложения, чат-боты, автоматизация — быстрее и дешевле классической разработки.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.3}>
